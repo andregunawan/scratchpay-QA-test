@@ -7,7 +7,6 @@ Returns the number of business days it will take for a payment to be allocated i
 
 ```
 npm install
-npm install cucumber pactum chai
 npm start
 npm run test
 click https://reports.cucumber.io/reports/ at the end of the test to show test report
