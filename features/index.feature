@@ -27,7 +27,7 @@ Feature: Index Express JS
         }
         """
 
-    Scenario: Handles requests for determining if a given date is a WEEKDAY.
+    Scenario: Handles requests for determining if a given date is a WEEKEND.
         Given User make a GET request using business date '2022-06-19'
         When I received a response
         Then I expect response should have a status 200
@@ -38,4 +38,24 @@ Feature: Index Express JS
         }
         """
 
-    
+    Scenario: Check incorrect date format should have a False result.
+        Given User make a GET request using business date '2022-06-1999'
+        When I received a response
+        Then I expect response should have a status 200
+        Then I expect response should have a json like
+        """
+        {
+            "results": false
+        }
+        """
+
+    Scenario: Check empty date should have an erro message.
+        Given User make a GET request using business date ''
+        When I received a response
+        Then I expect response should have a status 200
+        Then I expect response should have a json like
+        """
+        {
+            "errorMessage": "A valid date is required"
+        }
+        """

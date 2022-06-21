@@ -1,7 +1,6 @@
 const {When, Then, Given, Before} = require('@cucumber/cucumber')
 const {expect} = require('chai')
 const businessDates = require('../../lib/dates')
-const routesDates = require('../../routes/business_dates')
 const {DateTime} = require('luxon')
 
 // Steps for lib/dates.js
@@ -16,6 +15,12 @@ Then('If user input weekday date {int}-{int}-{int} it should return as False', f
 });
 
 When('User input is a holiday date {int}-{int}-{int} in {string} it should return as True', function (year, month, day, country) {
+    date = DateTime.local(year, month, day)
+    expect(businessDates.isHolidayDay(date, country)[0]).to.have.any.keys('name', 'type');
+    console.log('IT\'S A HOLIDAY!!! ' + businessDates.isHolidayDay(date, country)[0]["name"])
+});
+
+Then('if user input Indonesian independence day {int}-{int}-{int} in {string} it should return True', function (year, month, day, country) {
     date = DateTime.local(year, month, day)
     expect(businessDates.isHolidayDay(date, country)[0]).to.have.any.keys('name', 'type');
     console.log('IT\'S A HOLIDAY!!! ' + businessDates.isHolidayDay(date, country)[0]["name"])
@@ -42,6 +47,11 @@ Then('If user input weekend date {int}-{int}-{int} in {string} it should return 
 });
 
 Then('If user input holiday date {int}-{int}-{int} in {string} it should return as False', function (year, month, day, country) {
+    date = DateTime.local(year, month, day)
+    expect(businessDates.isBusinessDay(date, country)).to.be.false
+});
+
+When('User input weekday date with wrong format {int}-{int}-{int} in {string} it should return as False', function (year, month, day, country) {
     date = DateTime.local(year, month, day)
     expect(businessDates.isBusinessDay(date, country)).to.be.false
 });
@@ -73,4 +83,3 @@ Then('I expect response should have a json like', function (json) {
 Given('User make a GET request using business date {string}', function (date) {
     spec.get("http://localhost:3000/api/v1/isBusinessDay?date=" + date); 
 });
-
