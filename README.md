@@ -29,5 +29,5 @@ https://www.getpostman.com/collections/513fcfe6e39cfc70def4
 ![Screen Shot 2022-06-20 at 1 27 58 AM](https://user-images.githubusercontent.com/30281591/174727395-e738af57-9cd9-4163-89c1-1c4aff21be9c.png)
 ![Screen Shot 2022-06-20 at 1 28 10 AM](https://user-images.githubusercontent.com/30281591/174727396-e7e88c50-17eb-4d7a-af7a-4cf287e24bd8.png)
 
-## Tickets for Bug
+## Trello Board for Bugs
 https://trello.com/invite/b/tik4DhHL/5a2939c6807cd1d4f49ea667f460e440/scratch-pay-qa
