@@ -20,8 +20,9 @@ The entire API is accessible under `/api/v1` and the following endpoints are ava
 - `GET /api/v1/settlementDate`
 - `GET /api/v1/isBusinessDay`
 
-I run the API test using Postman here is the link to API test collection: 
-https://www.getpostman.com/collections/513fcfe6e39cfc70def4
+## Postman
+Here is the link to API test collection: 
+[Scratch-pay API test Collection](https://github.com/andregunawan/scratchpay-QA-test/tree/main/postman%20collection)
 
 ![Screen Shot 2022-06-20 at 10 22 24 PM](https://user-images.githubusercontent.com/30281591/174727323-b91f3678-3aed-4848-85f1-662ee9bd31a4.png)
 
